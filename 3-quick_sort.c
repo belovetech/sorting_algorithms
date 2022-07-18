@@ -9,11 +9,11 @@
 
 void swap(int *x, int *y)
 {
-    int temp;
+	int temp;
 
-    temp = *x;
-    *x = *y;
-    *y = temp;
+	temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 /**
@@ -27,25 +27,25 @@ void swap(int *x, int *y)
 
 int partition(int *array, int start, int end, size_t size)
 {
-    int i;
-    int pivot, pIndex;
+	int i;
+	int pivot, pIndex;
 
-    pivot = array[end];
-    pIndex = start -1;
+	pivot = array[end];
+	pIndex = start - 1;
 
-    for (i = start; i < end; i++)
-    {
-        if (array[i] < pivot)
-        {
-            pIndex++;
-            swap(&array[i], &array[pIndex]);
-        }
-    }
-    pIndex++;
-    swap(&array[pIndex], &array[end]);
-    print_array(array, size);
+	for (i = start; i < end; i++)
+	{
+		if (array[i] < pivot)
+		{
+			pIndex++;
+			swap(&array[i], &array[pIndex]);
+		}
+	}
+	pIndex++;
+	swap(&array[pIndex], &array[end]);
+	print_array(array, size);
 
-    return pIndex;
+	return (pIndex);
 }
 
 /**
@@ -59,14 +59,14 @@ int partition(int *array, int start, int end, size_t size)
 
 void quick(int *array, int start, int end, size_t size)
 {
-    int pIndex;
+	int pIndex;
 
-    if (start >= end || start < 0)
-        return;
+	if (start >= end || start < 0)
+		return;
 
-    pIndex = partition(array, start, end, size);
-    quick(array, start, pIndex - 1, size);
-    quick(array, pIndex + 1, end, size);
+	pIndex = partition(array, start, end, size);
+	quick(array, start, pIndex - 1, size);
+	quick(array, pIndex + 1, end, size);
 }
 
 /**
@@ -78,10 +78,10 @@ void quick(int *array, int start, int end, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-    size_t start, end;
+	size_t start, end;
 
-    start = 0;
-    end = size - 1;
+	start = 0;
+	end = size - 1;
 
-    quick(array, start, end, size);
+	quick(array, start, end, size);
 }
