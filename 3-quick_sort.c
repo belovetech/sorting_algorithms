@@ -16,38 +16,39 @@ void swap(int *x, int *y)
     *y = temp;
 }
 
-int partition(int *array, size_t start, size_t end, size_t size)
+int partition(int *array, int start, int end, size_t size)
 {
-    size_t i;
+    int i;
     int pivot, pIndex;
 
     pivot = array[end];
-    pIndex = start;
+    pIndex = start -1;
 
     for (i = start; i < end; i++)
     {
         if (array[i] < pivot)
         {
-            swap(&array[i], &array[pIndex]);
             pIndex++;
+            swap(&array[i], &array[pIndex]);
         }
     }
+    pIndex++;
     swap(&array[pIndex], &array[end]);
     print_array(array, size);
 
     return pIndex;
 }
 
-void quick(int *array, size_t start, size_t end, size_t size)
+void quick(int *array, int start, int end, size_t size)
 {
     int pIndex;
 
-    if (start < end)
-    {
-        pIndex = partition(array, start, end, size);
-        quick(array, start, pIndex - 1, size);
-        quick(array, pIndex + 1, end, size);
-    }
+    if (start >= end || start < 0)
+        return;
+
+    pIndex = partition(array, start, end, size);
+    quick(array, start, pIndex - 1, size);
+    quick(array, pIndex + 1, end, size);
 }
 
 void quick_sort(int *array, size_t size)
