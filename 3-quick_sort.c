@@ -16,6 +16,15 @@ void swap(int *x, int *y)
     *y = temp;
 }
 
+/**
+ * partition - partition array using start and end
+ *
+ * @array: array to be sorted
+ * @start: start of the array
+ * @end: end of the array
+ * @size: size of the array
+ */
+
 int partition(int *array, int start, int end, size_t size)
 {
     int i;
@@ -39,6 +48,15 @@ int partition(int *array, int start, int end, size_t size)
     return pIndex;
 }
 
+/**
+ * quick - recursive function using the pivot
+ *
+ * @array: array to be sorted
+ * @start: start of the array
+ * @end: end of the array
+ * @size: size of the array
+ */
+
 void quick(int *array, int start, int end, size_t size)
 {
     int pIndex;
@@ -50,6 +68,13 @@ void quick(int *array, int start, int end, size_t size)
     quick(array, start, pIndex - 1, size);
     quick(array, pIndex + 1, end, size);
 }
+
+/**
+ * quick_sort - function caling sort method
+ *
+ * @array: array to be sorted
+ * @size: size of the array
+ */
 
 void quick_sort(int *array, size_t size)
 {
