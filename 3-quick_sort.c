@@ -23,6 +23,8 @@ void swap(int *x, int *y)
  * @start: start of the array
  * @end: end of the array
  * @size: size of the array
+ *
+ * @Return: index of the pivot
  */
 
 int partition(int *array, int start, int end, size_t size)
