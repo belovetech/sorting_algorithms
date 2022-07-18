@@ -31,20 +31,27 @@ int partition(int *array, int start, int end, size_t size)
 	int pivot, pIndex;
 
 	pivot = array[end];
-	pIndex = start - 1;
+	pIndex = start;
 
 	for (i = start; i < end; i++)
 	{
 		if (array[i] < pivot)
 		{
+			if ( pIndex != i)
+			{
+				swap(&array[pIndex], &array[i]);
+				print_array(array, size);
+			}
 			pIndex++;
-			swap(&array[i], &array[pIndex]);
 		}
 	}
-	pIndex++;
-	swap(&array[pIndex], &array[end]);
-	print_array(array, size);
 
+	swap(&array[pIndex], &array[end]);
+
+	if (array[end] != pivot)
+	{
+		print_array(array, size);
+	}
 	return (pIndex);
 }
 
