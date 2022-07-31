@@ -109,5 +109,5 @@ Here is a quick tip to help you test your sorting algorithms with big sets of ra
 
 ### Contributors
 
-Abeeb Raheem [belovetech](https://github.com/belovetech/sorting_algorithms)
-Odunosh Moses [Moscode](https://github.com/belovetech/sorting_algorithms)
+- Abeeb Raheem [belovetech](https://github.com/belovetech/sorting_algorithms)
+- Odunosh Moses [Moscode](https://github.com/belovetech/sorting_algorithms)
